@@ -39,6 +39,7 @@ $(document).ready(function() {
         $("#falso_verdadero").hide();
         $("#opcion_simple").show();
         $("#opcion_multiple").hide();
+        $(".item_opcion").remove();
     });
 
     $("#omultiple").on("click", function() {
@@ -47,12 +48,21 @@ $(document).ready(function() {
         $("#falso_verdadero").hide();
         $("#opcion_simple").hide();
         $("#opcion_multiple").show();
+        $(".item_opcion").remove();
     });
 
-    $(".add_opcion").click(function(e) {
+    $(".add_opcion_simple").click(function(e) {
         e.preventDefault();
         nro_op++;
-        $(".items_opciones").append('<div><input type="text" name="opcion' + nro_op + '">' +
+        $(".items_opciones").append('<div  class="item_opcion"><input type="text" name="opcion' + nro_op + '">' +
+            '<input type="button" value="X" class="delete" /></div>');
+        $(".nro_opciones").val(nro_op);
+    });
+
+    $(".add_opcion_multiple").click(function(e) {
+        e.preventDefault();
+        nro_op++;
+        $(".items_opciones").append('<div  class="item_opcion"><input type="text" name="opcion' + nro_op + '">' +
             '<select id="sancion_porcentual' + nro_op + '" name="sancion_porcentual' + nro_op + '"><option value=""></option><option value="0">0</option><option value="-20">-20</option><option value="-25">-25</option><option value="-33.3">-33.33</option><option value="-50">-50</option><option value="-100">-100</option></select>' +
             '<input type="button" value="X" class="delete" /></div>');
         $(".nro_opciones").val(nro_op);
@@ -61,7 +71,7 @@ $(document).ready(function() {
     $(".add_respuesta").click(function(e) {
         e.preventDefault();
         nro_res++;
-        $(".items_respuestas").append('<div><input type="text" name="respuesta' + nro_res + '">' +
+        $(".items_respuestas").append('<div  class="sancion"><input type="text" name="respuesta' + nro_res + '">' +
             '<select id="valor_porcentual' + nro_res + '" name="valor_porcentual' + nro_res + '"><option value=""></option><option value="0">0</option><option value="20">20</option><option value="25">25</option><option value="33.3">33.33</option><option value="50">50</option><option value="100">100</option></select>' +
             '<input type="button" value="X" class="delete" /></div>');
 

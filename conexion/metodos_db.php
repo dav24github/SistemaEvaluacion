@@ -99,9 +99,9 @@
 					break;
 				}
 
-				case "pregunta_puntaje":{ 
-					$sql = "UPDATE pregunta SET puntaje = '$datos[0]'
-										WHERE idpregunta = '$datos[1]'";
+				case "test_pregunta_puntaje":{ 
+					$sql = "UPDATE test_pregunta SET puntaje = '$datos[0]'
+										WHERE idpregunta = '$datos[1]' AND idtest='$datos[2]'";
 					$result = mysqli_query($conexion,$sql);
 					break;
 				}

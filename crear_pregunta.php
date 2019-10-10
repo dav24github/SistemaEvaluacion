@@ -125,7 +125,7 @@
                 </select> 
           <?php 
             }else{ ?>
-                <select name="respuesta1" title="Elige la respuesta">
+                <select id="falso_o_verdadero" name="respuesta1" title="Elige la respuesta">
                     <option value="falso">Falso</option>
                     <option value="verdadero">Verdadero</option>
                 </select> 
@@ -134,13 +134,13 @@
         ?>      
         
         <!-- Opciones -->
-        <div class="opciones">
+        <!-- <div class="opciones">
             <p>Falso</p> <input type="text" hidden="" name="opcion1" value="falso">
             <p>Verdadero</p><input type="text" hidden="" name="opcion2" value="verdadero">
-        </div>
+        </div> -->
 
         <input class="nro_respuestas" type="text" hidden="" value="1" name="nro_respuestas">           
-        <input class="nro_opciones" type="text" hidden="" value="2" name="nro_opciones">           
+        <input class="nro_opciones" type="text" hidden="" value="1" name="nro_opciones">           
         
         <button>Continuar</button>
 
@@ -200,7 +200,7 @@
         ?>    
         <br><br>   
         
-        <label>Opciones:</label>
+        <label>Opciones (incorrectas):</label>
         <div class="items_opciones">
             <?php
                 // Entrar si hemos elegido una pregunta existente
@@ -220,7 +220,7 @@
         <?php
         // Entrar si *NO* hemos elegido una pregunta existente
         if (!isset($opciones)){ 
-            echo '<input type="button" value="+ añadir" class="add_opcion">';
+            echo '<input type="button" value="+ añadir" class="add_opcion_simple">';
         } 
         ?>   
         <br><br>   
@@ -312,7 +312,7 @@
         ?>   
         <br><br>         
 
-        <label>Opciones:</label>..........................</label><label>Sancion (%)</label>
+        <label>Opciones (incorrectas):</label>..........................</label><label>Sancion (%)</label>
         <div class="items_opciones">
             <?php
                 // Entrar si hemos elegido una pregunta existente
@@ -345,7 +345,7 @@
         <?php
         // Entrar si *NO* hemos elegido una pregunta existente
         if (!isset($opciones)){ 
-            echo '<input type="button" value="+ añadir" class="add_opcion">';
+            echo '<input type="button" value="+ añadir" class="add_opcion_multiple">';
         } 
         ?>   
         <br><br>   

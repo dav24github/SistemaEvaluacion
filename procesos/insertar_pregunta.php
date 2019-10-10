@@ -26,6 +26,11 @@
 	// obteniendo los valores (%)
 	$index=1;
 	for($i=1; $i<=$nro_respuestas; $i++){
+		if($tipo_pregunta=="falso_verdadero" || $tipo_pregunta=="opcion_simple"){
+			$valores[$index] = "100"; 
+			break;
+		}
+
 		if(isset($_POST['valor_porcentual' . $i])){
 			$valores[$index] = $_POST['valor_porcentual' . $i]; 
 			$index++;
@@ -34,7 +39,16 @@
 
 	//obteniendo las opciones
 	$index=1;
-	for($i=1; $i<=$nro_opciones; $i++){
+	for($i=1; $i<=$nro_opciones; $i++){		
+		if($tipo_pregunta=="falso_verdadero"){
+			if($_POST['respuesta1']=="verdadero"){
+				$opciones[$index]="falso";
+			}else{
+				$opciones[$index]="verdadero";
+			}
+			break;
+		}
+		
 		if(isset($_POST['opcion' . $i])){
 			$opciones[$index] = $_POST['opcion' . $i]; 
 			$index++;
